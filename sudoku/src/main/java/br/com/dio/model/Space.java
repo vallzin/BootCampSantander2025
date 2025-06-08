@@ -3,7 +3,7 @@ package br.com.dio.model;
 public class Space {
 
     private Integer actual;
-    private final int expected:
+    private final int expected;
     private final boolean fixed;
 
     public Space(int expected, boolean fixed) {
