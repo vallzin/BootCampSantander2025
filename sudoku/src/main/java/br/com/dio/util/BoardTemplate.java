@@ -4,7 +4,7 @@ public class BoardTemplate {
 
     private BoardTemplate(){}
 
-    public final String BOARD_TEMPLATE =
+    public static final String BOARD_TEMPLATE =
 
     """
     ------------------------------------------------------------------------
