@@ -8,13 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class boardService {
+public class BoardService {
 
     private final static int BOARD_LIMIT = 9;
 
     private final Board board;
 
-    public boardService(final Map<String, String> gameConfig) {
+    public BoardService(final Map<String, String> gameConfig) {
         this.board = new Board(initBoard(gameConfig));
     }
 
