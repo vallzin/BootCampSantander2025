@@ -3,7 +3,6 @@ package br.com.dio;
 
 import br.com.dio.model.Board;
 import br.com.dio.model.Space;
-import br.com.dio.util.BoardTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -183,7 +182,7 @@ public class Main {
             return;
         }
 
-        if(board.gameisFinished()){
+        if(board.gameIsFinished()){
             System.out.println("Parabéns, você concluio o jogo");
             showCurrentGame();
         } else if (board.hasErrors()) {
