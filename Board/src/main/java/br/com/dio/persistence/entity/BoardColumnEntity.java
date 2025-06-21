@@ -12,16 +12,21 @@ public class BoardColumnEntity {
     private String name;
     private int order;
     private BoardColumnEnumKind kind;
-    @ToStringExclude
-    @EqualsExclude
-    private List<CardEntity> cards = new ArrayList<>();
+    private BoardEntity board = new BoardEntity();
 
-    public BoardColumnEntity(Long id, String name, int order, BoardColumnEnumKind kind, List<CardEntity> cards) {
+    public BoardColumnEntity(Long id, String name, int order, BoardColumnEnumKind kind) {
         this.id = id;
         this.name = name;
         this.order = order;
         this.kind = kind;
-        this.cards = cards;
+    }
+
+    public BoardEntity getBoard() {
+        return board;
+    }
+
+    public void setBoard(BoardEntity board) {
+        this.board = board;
     }
 
     public Long getId() {
@@ -48,11 +53,11 @@ public class BoardColumnEntity {
         this.order = order;
     }
 
-    public List<CardEntity> getCards() {
-        return cards;
+    public BoardColumnEnumKind getKind() {
+        return kind;
     }
 
-    public void setCards(List<CardEntity> cards) {
-        this.cards = cards;
+    public void setKind(BoardColumnEnumKind kind) {
+        this.kind = kind;
     }
 }
