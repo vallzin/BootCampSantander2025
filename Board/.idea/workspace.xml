@@ -13,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -37,6 +38,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.dio.persistence.entity" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\BootCampSantander2025\Board\src\main\resources\db\changelog\migrations" />
     </key>
