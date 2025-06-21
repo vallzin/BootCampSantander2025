@@ -31,10 +31,16 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/BootCampSantander2025/Board/src/main/resources/db/changelog/migrations",
     "onboarding.tips.debug.path": "D:/BootCampSantander2025/Board/src/main/java/br/com/dio/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\BootCampSantander2025\Board\src\main\resources\db\changelog\migrations" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.dio.Main" />
