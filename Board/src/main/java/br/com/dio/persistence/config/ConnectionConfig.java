@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public final class ConnectionConfig {
 
+    public ConnectionConfig() {
+    }
+
     public static Connection getConnection() throws SQLException {
         String url = "jdbc:mysql://localhost/board";
         String user = "vallzin";
