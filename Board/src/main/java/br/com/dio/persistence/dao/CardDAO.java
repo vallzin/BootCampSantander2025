@@ -1,6 +1,8 @@
 package br.com.dio.persistence.dao;
 
 import br.com.dio.dto.CardDetailsDTO;
+import br.com.dio.persistence.entity.CardEntity;
+import com.mysql.cj.jdbc.StatementImpl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +20,21 @@ public class CardDAO {
     public CardDAO(Connection connection) {
     }
 
+    public CardEntity insert(final CardEntity entity) throws SQLException {
+        var sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";
+        try(var statement = connection.prepareStatement(sql)){
+            var i = 1;
+            statement.setString(i ++, entity.getTitle());
+            statement.setString(i ++, entity.getDescription());
+            statement.setLong(i, entity.getBoardColumn().getId());
+            statement.executeUpdate();
+            if (statement instanceof StatementImpl impl){
+                entity.setId(impl.getLastInsertID());
+            }
+        }
+        return entity;
+    }
+
     public Optional<CardDetailsDTO> findById(final Long id) throws SQLException {
         String  sql =
                 """
@@ -30,7 +47,7 @@ public class CardDAO {
                        bc.name,
                        (SELECT COUNT(sub_b.id)
                                FROM BLOCKS sub_b
-                              WHERE sub_b.card_id = c.id) blocks_amount
+                               WHERE sub_b.card_id = c.id) blocks_amount
                   FROM CARDS c
                   LEFT JOIN BLOCKS b
                     ON c.id = b.card_id

@@ -5,6 +5,7 @@ public class CardEntity {
     private Long id;
     private String title;
     private String description;
+    private BoardColumnEntity boardColumn = new BoardColumnEntity();
 
     public CardEntity() {}
 
@@ -32,4 +33,11 @@ public class CardEntity {
         this.description = description;
     }
 
+    public BoardColumnEntity getBoardColumn() {
+        return boardColumn;
+    }
+
+    public void setBoardColumn(BoardColumnEntity boardColumn) {
+        this.boardColumn = boardColumn;
+    }
 }

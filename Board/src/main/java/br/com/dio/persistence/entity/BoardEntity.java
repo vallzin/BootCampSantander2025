@@ -7,7 +7,10 @@ import org.apache.commons.lang3.builder.ToStringExclude;
 import java.util.ArrayList;
 import java.util.List;
 
+import static br.com.dio.persistence.entity.BoardColumnKindEnum.INITIAL;
+
 public class BoardEntity {
+
 
     private Long id;
     private String name;
@@ -41,5 +44,12 @@ public class BoardEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public BoardColumnEntity getInitialColumn(){
+        return boardColumns
+                .stream()
+                .filter(bc -> bc.getKind().equals(INITIAL))
+                .findFirst().orElseThrow();
     }
 }

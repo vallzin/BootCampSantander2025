@@ -84,7 +84,13 @@ public class MainMenu {
             BoardQueryService queryService = new BoardQueryService(connection);
             var optional = queryService.findById(id);
             optional.ifPresentOrElse(
-                    b -> new BoardMenu(b).execute(),
+                    b -> {
+                        try {
+                            new BoardMenu(b).execute();
+                        } catch (SQLException e) {
+                            throw new RuntimeException(e);
+                        }
+                    },
                     () -> System.out.printf("Não foi encontrado um board com id %s\n", id)
             );
         }
