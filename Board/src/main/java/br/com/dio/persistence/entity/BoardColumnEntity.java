@@ -5,7 +5,6 @@ import org.apache.commons.lang3.builder.HashCodeExclude;
 import org.apache.commons.lang3.builder.ToStringExclude;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class BoardColumnEntity {
@@ -19,6 +18,9 @@ public class BoardColumnEntity {
     @EqualsExclude
     @HashCodeExclude
     private List<CardEntity> cards = new ArrayList<>();
+
+    public BoardColumnEntity() {
+    }
 
     public Long getId() {
         return id;

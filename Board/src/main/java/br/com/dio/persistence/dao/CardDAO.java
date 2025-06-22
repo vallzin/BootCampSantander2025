@@ -15,13 +15,14 @@ import static java.util.Objects.nonNull;
 
 public class CardDAO {
 
-    private Connection connection;
+    private final Connection connection;
 
     public CardDAO(Connection connection) {
+        this.connection = connection;
     }
 
     public CardEntity insert(final CardEntity entity) throws SQLException {
-        var sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";
+        String sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";
         try(var statement = connection.prepareStatement(sql)){
             var i = 1;
             statement.setString(i ++, entity.getTitle());
@@ -76,5 +77,15 @@ public class CardDAO {
             }
         }
         return Optional.empty();
+    }
+
+    public void moveToColumn(final Long columnId, final Long cardId) throws SQLException{
+        var sql = "UPDATE CARDS SET board_column_id = ? WHERE id = ?;";
+        try(var statement = connection.prepareStatement(sql)){
+            var i = 1;
+            statement.setLong(i ++, columnId);
+            statement.setLong(i, cardId);
+            statement.executeUpdate();
+        }
     }
 }

@@ -3,13 +3,13 @@ package br.com.dio.ui;
 import br.com.dio.persistence.entity.BoardColumnEntity;
 import br.com.dio.persistence.entity.BoardColumnKindEnum;
 import br.com.dio.persistence.entity.BoardEntity;
+import br.com.dio.service.BoardColumnQueryService;
 import br.com.dio.service.BoardQueryService;
 import br.com.dio.service.BoardService;
 
+import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static br.com.dio.persistence.config.ConnectionConfig.getConnection;
 import static br.com.dio.persistence.entity.BoardColumnKindEnum.*;
@@ -38,12 +38,12 @@ public class MainMenu {
     }
 
     private void createBoard() throws SQLException {
-        var entity = new BoardEntity();
+        BoardEntity entity = new BoardEntity();
         System.out.println("Informe o nome do seu board");
         entity.setName(scanner.next());
 
         System.out.println("Seu board terá colunas além das 3 padrões? Se sim informe quantas, senão digite '0'");
-        var additionalColumns = scanner.nextInt();
+        int additionalColumns = scanner.nextInt();
 
         List<BoardColumnEntity> columns = new ArrayList<>();
 
@@ -80,19 +80,17 @@ public class MainMenu {
     private void selectBoard() throws SQLException {
         System.out.println("Informe o id do board que deseja selecionar");
         Long id = scanner.nextLong();
-        try(var connection = getConnection()){
+        try (Connection connection = getConnection()){
             BoardQueryService queryService = new BoardQueryService(connection);
-            var optional = queryService.findById(id);
-            optional.ifPresentOrElse(
-                    b -> {
+            Optional<BoardEntity> optional = queryService.findById(id);
+            optional.ifPresentOrElse(b -> {
                         try {
                             new BoardMenu(b).execute();
                         } catch (SQLException e) {
                             throw new RuntimeException(e);
                         }
                     },
-                    () -> System.out.printf("Não foi encontrado um board com id %s\n", id)
-            );
+                    () -> System.out.printf("Não foi encontrado um board com id %s%n",id));
         }
     }
 
@@ -102,9 +100,9 @@ public class MainMenu {
         try (var connection = getConnection()) {
             var service = new BoardService(connection);
             if (service.delete(id)) {
-                System.out.printf("O board %s foi excluído\n", id);
+                System.out.printf("O board %s foi excluído%n", id);
             } else {
-                System.out.printf("Não foi encontrado um board com id %s\n", id);
+                System.out.printf("Não foi encontrado um board com id %s%n", id);
             }
         }
     }

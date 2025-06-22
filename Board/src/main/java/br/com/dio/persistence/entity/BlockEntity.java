@@ -10,14 +10,7 @@ public class BlockEntity {
     private OffsetDateTime unblockedAt;
     private String unblockReason;
 
-    public BlockEntity(Long id, OffsetDateTime blockedAt, String blockReason,
-                       OffsetDateTime unblockedAt, String unblockReason) {
-        this.id = id;
-        this.blockedAt = blockedAt;
-        this.blockReason = blockReason;
-        this.unblockedAt = unblockedAt;
-        this.unblockReason = unblockReason;
-    }
+    public BlockEntity() {}
 
     public Long getId() {
         return id;

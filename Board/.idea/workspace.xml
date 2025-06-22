@@ -16,6 +16,7 @@
         <option value="Enum" />
         <option value="Record" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -27,17 +28,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/BootCampSantander2025/Board/src/main/resources/db/changelog/migrations&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/BootCampSantander2025/Board/src/main/java/br/com/dio/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/BootCampSantander2025/Board/src/main/resources/db/changelog/migrations",
+    "onboarding.tips.debug.path": "D:/BootCampSantander2025/Board/src/main/java/br/com/dio/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.dio.ui" />

@@ -1,10 +1,17 @@
 package br.com.dio.persistence.entity;
 
+import org.apache.commons.lang3.builder.EqualsExclude;
+import org.apache.commons.lang3.builder.HashCodeExclude;
+import org.apache.commons.lang3.builder.ToStringExclude;
+
 public class CardEntity {
 
     private Long id;
     private String title;
     private String description;
+    @ToStringExclude
+    @HashCodeExclude
+    @EqualsExclude
     private BoardColumnEntity boardColumn = new BoardColumnEntity();
 
     public CardEntity() {}

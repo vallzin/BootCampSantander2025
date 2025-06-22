@@ -2,7 +2,6 @@ package br.com.dio.persistence.dao;
 
 import br.com.dio.dto.BoardColumnDTO;
 import br.com.dio.persistence.entity.BoardColumnEntity;
-import br.com.dio.persistence.entity.BoardColumnKindEnum;
 import br.com.dio.persistence.entity.CardEntity;
 import com.mysql.cj.jdbc.StatementImpl;
 
@@ -26,7 +25,7 @@ public class BoardColumnDAO {
     }
 
     public BoardColumnEntity insert(final BoardColumnEntity entity) throws SQLException {
-        var sql = "INSERT INTO BOARDS_COLUMNS (name, `order`, kind, board_id) VALUES (?, ?, ?, ?);";
+        String sql = "INSERT INTO BOARDS_COLUMNS (name, `order`, kind, board_id) VALUES (?, ?, ?, ?);";
         try(var statement = connection.prepareStatement(sql)){
             var i = 1;
             statement.setString(i ++, entity.getName());
