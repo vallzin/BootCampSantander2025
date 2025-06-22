@@ -15,8 +15,8 @@
       <list>
         <option value="Enum" />
         <option value="Record" />
-        <option value="Class" />
         <option value="Exception" />
+        <option value="Class" />
       </list>
     </option>
   </component>
