@@ -6,11 +6,7 @@ public class CardEntity {
     private String title;
     private String description;
 
-    public CardEntity(Long id, String title, String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-    }
+    public CardEntity() {}
 
     public Long getId() {
         return id;

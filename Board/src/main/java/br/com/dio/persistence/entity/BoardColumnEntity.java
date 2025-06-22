@@ -1,5 +1,13 @@
 package br.com.dio.persistence.entity;
 
+import org.apache.commons.lang3.builder.EqualsExclude;
+import org.apache.commons.lang3.builder.HashCodeExclude;
+import org.apache.commons.lang3.builder.ToStringExclude;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class BoardColumnEntity {
 
     private Long id;
@@ -7,16 +15,10 @@ public class BoardColumnEntity {
     private int order;
     private BoardColumnKindEnum kind;
     private BoardEntity board = new BoardEntity();
-
-    public BoardColumnEntity() {}
-
-    public BoardEntity getBoard() {
-        return board;
-    }
-
-    public void setBoard(BoardEntity board) {
-        this.board = board;
-    }
+    @ToStringExclude
+    @EqualsExclude
+    @HashCodeExclude
+    private List<CardEntity> cards = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -48,5 +50,21 @@ public class BoardColumnEntity {
 
     public void setKind(BoardColumnKindEnum kind) {
         this.kind = kind;
+    }
+
+    public BoardEntity getBoard() {
+        return board;
+    }
+
+    public void setBoard(BoardEntity board) {
+        this.board = board;
+    }
+
+    public List<CardEntity> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<CardEntity> cards) {
+        this.cards = cards;
     }
 }
