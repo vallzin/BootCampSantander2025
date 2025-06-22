@@ -1,25 +1,14 @@
 package br.com.dio.persistence.entity;
 
-import org.apache.commons.lang3.builder.EqualsExclude;
-import org.apache.commons.lang3.builder.ToStringExclude;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class BoardColumnEntity {
 
     private Long id;
     private String name;
     private int order;
-    private BoardColumnEnumKind kind;
+    private BoardColumnKindEnum kind;
     private BoardEntity board = new BoardEntity();
 
-    public BoardColumnEntity(Long id, String name, int order, BoardColumnEnumKind kind) {
-        this.id = id;
-        this.name = name;
-        this.order = order;
-        this.kind = kind;
-    }
+    public BoardColumnEntity() {}
 
     public BoardEntity getBoard() {
         return board;
@@ -53,11 +42,11 @@ public class BoardColumnEntity {
         this.order = order;
     }
 
-    public BoardColumnEnumKind getKind() {
+    public BoardColumnKindEnum getKind() {
         return kind;
     }
 
-    public void setKind(BoardColumnEnumKind kind) {
+    public void setKind(BoardColumnKindEnum kind) {
         this.kind = kind;
     }
 }
