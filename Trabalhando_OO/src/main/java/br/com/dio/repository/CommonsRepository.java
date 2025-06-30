@@ -14,6 +14,7 @@ import static br.com.dio.model.BankService.ACCOUNT;
 
 public final class CommonsRepository {
 
+    public CommonsRepository(){}
 
     public static void checkFundsForTransaction(final Wallet source,
                                                 final long amount){
@@ -28,6 +29,5 @@ public final class CommonsRepository {
         var history = new MoneyAudit(transactionId, ACCOUNT,description, OffsetDateTime.now());
         return Stream.generate(() -> new Money(history)).limit(funds).toList();
     }
-
 
 }

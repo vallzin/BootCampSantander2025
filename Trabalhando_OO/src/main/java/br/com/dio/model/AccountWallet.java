@@ -27,4 +27,11 @@ public class AccountWallet  extends Wallet{
     public List<String> getPix() {
         return pix;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "AccountWallet{" +
+                "pix=" + pix +
+                '}';
+    }
 }

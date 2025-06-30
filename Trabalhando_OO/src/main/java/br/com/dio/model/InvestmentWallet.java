@@ -11,7 +11,9 @@ public class InvestmentWallet extends Wallet{
     private final Investment investment;
     private final AccountWallet account;
 
-    public InvestmentWallet(Investment investment, AccountWallet account, final long amount) {
+    public InvestmentWallet(final Investment investment,
+                            final AccountWallet account,
+                            final long amount) {
         super(INVESTMENT);
         this.investment = investment;
         this.account = account;
@@ -35,7 +37,7 @@ public class InvestmentWallet extends Wallet{
 
     @Override
     public String toString() {
-        return "InvestmentWallet{" +
+        return super.toString() + "InvestmentWallet{" +
                 "investment=" + investment +
                 ", account=" + account +
                 '}';

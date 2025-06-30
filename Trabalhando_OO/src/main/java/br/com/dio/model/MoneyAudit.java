@@ -9,5 +9,4 @@ public record MoneyAudit(
     String description,
     OffsetDateTime createdAt
 
-) {
-}
+) {}
