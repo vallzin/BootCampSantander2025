@@ -5,25 +5,42 @@ import java.util.Objects;
 public class HangmanChar {
 
     private final char character;
-    private boolean inVisible;
+    private boolean isVisible;
     private int position;
 
     public HangmanChar(final char character){
         this.character = character;
-        this.inVisible = true;
+        this.isVisible = false;
+    }
+
+    public HangmanChar(final char character,
+                       final int position){
+        this.character = character;
+        this.position = position;
+        this.isVisible = true;
     }
 
     public char getCharacter(){
         return character;
     }
 
-    public boolean isInVisible(){
-        return inVisible;
+    public boolean isVisible(){
+        return isVisible;
+    }
+
+    public boolean isInvisible(){
+        return !isVisible;
+    }
+
+
+    public void enableVisibility(){
+        isVisible = true;
     }
 
     public int getPosition(){
         return position;
     }
+
     public void setPosition(final int position){
         this.position = position;
     }
@@ -32,19 +49,19 @@ public class HangmanChar {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         HangmanChar that = (HangmanChar) o;
-        return character == that.character && inVisible == that.inVisible && position == that.position;
+        return character == that.character && isVisible == that.isVisible && position == that.position;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(character, inVisible, position);
+        return Objects.hash(character, isVisible, position);
     }
 
     @Override
     public String toString() {
         return "HangmanChar{" +
                 "character=" + character +
-                ", inVisible=" + inVisible +
+                ", inVisible=" + isVisible +
                 ", position=" + position +
                 '}';
     }

@@ -1,6 +1,6 @@
 package br.com.dio.hangman.model;
 
-public enum HangmaonGameStatus {
+public enum HangmanGameStatus {
 
     PENDING,
     WIN,
