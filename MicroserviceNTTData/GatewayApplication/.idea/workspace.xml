@@ -30,6 +30,7 @@
     "Application.ApiGatewayApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
     "onboarding.tips.debug.path": "D:/BootCampSantander2025/MicroserviceNTTData/GatewayApplication/src/main/java/br/com/dio/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }

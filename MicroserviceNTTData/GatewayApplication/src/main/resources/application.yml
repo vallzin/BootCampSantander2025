@@ -3,25 +3,57 @@ server:
 
 spring:
   application:
-    name: api-gateway
+    name: gateway-service
   cloud:
     gateway:
       server:
         webflux:
           routes:
-            - id: produto-service
+            - id: product-service
               uri: lb://produto-service
               predicates:
-                - Path=/produtos/**
-            - id: pedido-service
+                - Path=/product-service/**
+              filters:
+                - StripPrefix=1  # Remove o prefixo /product-service
+
+            - id: product-service-h2-console
+              uri: lb://produto-service
+              predicates:
+                - Path=/product-service/h2-console/**
+              filters:
+                - RewritePath=/product-service/h2-console/(?<segment>.*), /h2-console/$\{segment}
+
+            - id: order-service
               uri: lb://pedido-service
               predicates:
-                - Path=/pedidos/**
+                - Path=/order-service/**
+              filters:
+                - StripPrefix=1  # Remove o prefixo /order-service
+                - name: Retry
+                  args:
+                    retries: 3
+                    statuses: SERVICE_UNAVAILABLE
+          
           discovery:
             locator:
               enabled: true
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # Expõe todos os endpoints do actuator
+      base-path: /actuator  # Define o caminho base
+  endpoint:
+    health:
+      show-details: always
+    gateway:
+      enabled: true  # Habilita endpoints específicos do Gateway
+
+# Configuração de logging para diagnóstico (opcional)
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.cloud.loadbalancer: DEBUG
