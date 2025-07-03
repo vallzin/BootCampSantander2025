@@ -4,13 +4,16 @@ public class OrderItem {
 
     private Long productId;
     private Integer quantity;
+    private Double unitPrice;
 
     public OrderItem(){}
 
     public OrderItem(Long productId,
-                     Integer quantity){
+                     Integer quantity,
+                     Double unitPrice){
         this.productId = productId;
         this.quantity = quantity;
+        this.unitPrice = unitPrice;
     }
 
     public Long getProductId(){
@@ -27,6 +30,14 @@ public class OrderItem {
 
     public void setQuantity(Integer quantity){
         this.quantity = quantity;
+    }
+
+    public Double getUnitPrice(double price){
+        return unitPrice;
+    }
+
+    public void setUnitPrice(Double unitPrice){
+        this.unitPrice = unitPrice;
     }
 
 

@@ -7,6 +7,7 @@ public class Order {
     private Long id;
     private String cliente;
     private List<OrderItem> items;
+    private Double total;
 
     public Order(){}
 
@@ -14,6 +15,14 @@ public class Order {
                  List<OrderItem> items){
         this.cliente = cliente;
         this.items = items;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 
     public String getCliente(){
@@ -31,5 +40,12 @@ public class Order {
     public void setItems(List<OrderItem> items){
         this.items = items;
     }
-    
+
+    public Double getTotal(){
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
+    }
 }
