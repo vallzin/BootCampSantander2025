@@ -13,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,17 +31,23 @@
     "Application.OrderServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
     "onboarding.tips.debug.path": "D:/BootCampSantander2025/MicroserviceNTTData/OrderService/src/main/java/br/com/dio/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.dio.client" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="OrderServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.dio.OrderServiceApplication" />
       <module name="OrderService" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.dio.*" />
+          <option name="PATTERN" value="br.com.dio.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,16 +70,5 @@
       <updated>1751554805975</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/dio/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
