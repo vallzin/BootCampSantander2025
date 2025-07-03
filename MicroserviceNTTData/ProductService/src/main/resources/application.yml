@@ -1,9 +1,16 @@
 server:
-  port: 8081  # Porta diferente do gateway
+  port: 8081
 
 spring:
   application:
     name: produto-service
+  datasource:
+    url: jdbc:h2:mem:produtosdb
+    username: valmilson
+    password: valmilson
+  h2:
+    console:
+      enabled: true
 
 eureka:
   client:
