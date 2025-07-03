@@ -14,12 +14,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2zMuw24vrFs24dZgUD4h8jUAIxD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,17 +31,24 @@
     "Application.ProductServiceApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/BootCampSantander2025/MicroserviceNTTData/ProductService",
     "onboarding.tips.debug.path": "D:/BootCampSantander2025/MicroserviceNTTData/ProdutoService/src/main/java/br/com/dio/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.dio.exceptions" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ProductServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.dio.ProductServiceApplication" />
-      <module name="ProdutoService" />
+      <module name="produto-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.dio.*" />
+          <option name="PATTERN" value="br.com.dio.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
